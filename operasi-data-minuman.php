@@ -2,9 +2,11 @@
 
 if (isset($_POST['tambah-data'])) {
     header('Location: tambah-minuman.php');
+    exit;
 } elseif (isset($_POST['edit-data'])) {
     $id = $_POST['id'];
     header("Location: edit-minuman.php?id=$id");
+    exit;
 } elseif (isset($_POST['hapus-data'])) {
     require_once 'Minuman.php';
 
