@@ -50,18 +50,26 @@ error_reporting(E_ALL);
                 echo "<form action='operasi-data-minuman.php' method='POST'>";
                 echo "<input type='hidden' name='id' value='" . $row['id_minuman'] . "'>";
                 echo "<button type='submit' name='edit-data'>Edit (+)</button>";
+                echo "</form>";
+                echo "<form action='operasi-data-minuman.php' method='POST' onsubmit='return konfirmasiHapus();'>";
+                echo "<input type='hidden' name='id' value='" . $row['id_minuman'] . "'>";
                 echo "<button type='submit' name='hapus-data'>Hapus (-)</button>";
                 echo "</form>";
                 echo "</td>";
                 echo "</tr>";
-            
             }
             ?>
         </tbody>
 
+
+
     </table>
 
-
+    <script>
+        function konfirmasiHapus() {
+            return confirm("Apakah Anda yakin ingin Menghapus?");
+        }
+    </script>
 </body>
 
 </html>
